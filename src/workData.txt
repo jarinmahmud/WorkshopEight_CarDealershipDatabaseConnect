@@ -1,0 +1,21 @@
+D & B Used Cars|111 Old Benbrook Rd|817-555-5555
+10112|1993|Ford|Explorer|SUV|Red|525123|995.0
+37846|2001|Ford|Ranger|Truck|Yellow|172544|1995.0
+44901|2012|Honda|Civic|SUV|Gray|103221|6995.0
+89123|2015|Toyota|Corolla|Car|Blue|80000|12000.0
+71234|2018|Chevrolet|Silverado|Truck|Black|60000|25000.0
+62345|2010|Nissan|Altima|Car|White|95000|8000.0
+53456|2019|Honda|Accord|Car|Silver|40000|18000.0
+44567|2014|Jeep|Wrangler|SUV|Green|65000|22000.0
+35678|2017|Hyundai|Elantra|Car|Red|55000|10000.0
+26789|2016|Subaru|Outback|SUV|Blue|70000|15000.0
+17890|2011|GMC|Sierra|Truck|Gray|90000|18000.0
+78901|2020|Ford|Fusion|Car|Black|30000|20000.0
+89012|2013|Toyota|Rav4|SUV|White|75000|17000.0
+90123|2018|Chevrolet|Cruze|Car|Red|50000|15000.0
+91234|2015|Nissan|Pathfinder|SUV|Silver|85000|16000.0
+12345|2014|Honda|Pilot|SUV|Black|95000|23000.0
+23456|2017|Toyota|Camry|Car|Blue|40000|19000.0
+34567|2012|Ford|Escape|SUV|Green|72000|14000.0
+45678|2019|Hyundai|Tucson|SUV|Orange|55000|21000.0
+56789|2016|Jeep|Cherokee|SUV|Silver|67000|20000.0
