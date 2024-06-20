@@ -11,15 +11,18 @@ class Vehicle {
     private double price;
 
     //Constructor
-    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
+    public Vehicle(int vin, String year, String make, int model, String vehicleType, int color, String odometer, double price) {
         this.vin = vin;
-        this.year = year;
+        this.year = Integer.parseInt(year);
         this.make = make;
-        this.model = model;
+        this.model = String.valueOf(model);
         this.vehicleType = vehicleType;
-        this.color = color;
-        this.odometer = odometer;
+        this.color = String.valueOf(color);
+        this.odometer = Integer.parseInt(odometer);
         this.price = price;
+    }
+
+    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
     }
 
     //Getters
@@ -60,4 +63,11 @@ class Vehicle {
     }
 
 
+    public int getMileage() {
+        return 0;
+    }
+
+    public String getType() {
+        return "";
+    }
 }
