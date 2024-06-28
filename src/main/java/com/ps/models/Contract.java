@@ -1,12 +1,10 @@
-package com.ps;
+package com.ps.models;
 
 public abstract class Contract {
     private String date;
     private String customerName;
     private String customerEmail;
     private String vehicleVin;
-    private double totalPrice;
-    private double monthlyPayment;
 
     public Contract(String date, String customerName, String customerEmail, String vehicleVin) {
         this.date = date;

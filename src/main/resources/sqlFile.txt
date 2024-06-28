@@ -1,0 +1,93 @@
+
+CREATE DATABASE CarDealership;
+
+USE CarDealership;
+
+-- Table for storing dealership information
+CREATE TABLE Dealership (
+    dealershipId INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    address VARCHAR(200),
+    phone VARCHAR(20)
+);
+
+-- Table for storing vehicle information
+CREATE TABLE Vehicle (
+    vin VARCHAR(20) PRIMARY KEY,
+    year INT,
+    make VARCHAR(50),
+    model VARCHAR(50),
+    vehicleType VARCHAR(50),
+    color VARCHAR(20),
+    odometer INT,
+    price DOUBLE,
+    dealershipId INT,
+    FOREIGN KEY (dealershipId) REFERENCES Dealership(dealershipId)
+);
+
+-- Table for storing contract information
+CREATE TABLE Contract (
+    contractId INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE,
+    customerName VARCHAR(100),
+    customerEmail VARCHAR(100),
+    vehicleVin VARCHAR(20),
+    type VARCHAR(10),
+    FOREIGN KEY (vehicleVin) REFERENCES Vehicle(vin)
+);
+
+-- Table for storing lease contract information
+CREATE TABLE LeaseContract (
+    contractId INT PRIMARY KEY,
+    price DOUBLE,
+    totalPrice DOUBLE,
+    monthlyPayment DOUBLE,
+    FOREIGN KEY (contractId) REFERENCES Contract(contractId)
+);
+
+-- Table for storing sales contract information
+CREATE TABLE SalesContract (
+    contractId INT PRIMARY KEY,
+    price DOUBLE,
+    finance BOOLEAN,
+    totalPrice DOUBLE,
+    monthlyPayment DOUBLE,
+    salesTaxRate DOUBLE,
+    recordingFee DOUBLE,
+    processingFee DOUBLE,
+    interestRate DOUBLE,
+    loanTerm INT,
+    FOREIGN KEY (contractId) REFERENCES Contract(contractId)
+);
+
+-- Insert sample data into Dealership table
+INSERT INTO Dealership (name, address, phone) VALUES
+('Auto Galaxy', '123 Elm Street, Springfield, IL', '217-555-0123'),
+('Speedy Motors', '456 Oak Avenue, Metropolis, IL', '217-555-0456'),
+('Luxury Wheels', '789 Pine Road, Gotham, IL', '217-555-0789');
+
+-- Insert sample data into Vehicle table
+INSERT INTO Vehicle (vin, year, make, model, vehicleType, color, odometer, price, dealershipId) VALUES
+('1HGCM82633A123456', 2023, 'Honda', 'Accord', 'Sedan', 'Blue', 5000, 25000, 1),
+('2FTRX18L2XCA12345', 2021, 'Ford', 'F-150', 'Truck', 'Red', 12000, 35000, 2),
+('3VWDX7AJ9BM123456', 2022, 'Volkswagen', 'Jetta', 'Sedan', 'Black', 8000, 20000, 3),
+('4T1BG22K6VU123456', 2020, 'Toyota', 'Camry', 'Sedan', 'White', 15000, 22000, 1),
+('1FTFW1EF1EFA12345', 2019, 'Ford', 'F-150', 'Truck', 'Blue', 30000, 30000, 2);
+
+-- Insert sample data into Contract table
+INSERT INTO Contract (date, customerName, customerEmail, vehicleVin, type) VALUES
+('2024-06-01', 'John Doe', 'johndoe@example.com', '1HGCM82633A123456', 'SALE'),
+('2024-06-15', 'Jane Smith', 'janesmith@example.com', '2FTRX18L2XCA12345', 'LEASE'),
+('2024-06-20', 'Alice Johnson', 'alicej@example.com', '3VWDX7AJ9BM123456', 'SALE');
+
+-- Insert sample data into LeaseContract table
+INSERT INTO LeaseContract (contractId, price, totalPrice, monthlyPayment) VALUES
+(2, 35000, 35000 * 0.5 + 35000 * 0.07, (35000 * 0.5 + 35000 * 0.07) * 0.04 / (1 - POWER(1 + 0.04, -36)));
+
+-- Insert sample data into SalesContract table
+INSERT INTO SalesContract (contractId, price, finance, totalPrice, monthlyPayment, salesTaxRate, recordingFee, processingFee, interestRate, loanTerm) VALUES
+(1, 25000, TRUE, 25000 * 1.05 + 100 + 495, (25000 * 1.05 + 100 + 495) * 0.0425 / (1 - POWER(1 + 0.0425, -48)), 0.05, 100, 495, 0.0425, 48),
+(3, 20000, FALSE, 20000 * 1.05 + 100 + 295, 0, 0.05, 100, 295, 0.0525, 24);
+
+
+select * from  Contract

@@ -1,5 +1,8 @@
 package com.ps;
 
+import com.ps.models.Dealership;
+import com.ps.models.Vehicle;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -22,7 +25,7 @@ public class DealershipFileManager {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] vehicleData = line.split("\\|");
-                int vin = Integer.parseInt(vehicleData[0]);
+                String vin = vehicleData[0];
                 int year = Integer.parseInt(vehicleData[1]);
                 String make = vehicleData[2];
                 String model = vehicleData[3];

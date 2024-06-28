@@ -1,5 +1,7 @@
 package com.ps;
 
+import com.ps.models.Contract;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

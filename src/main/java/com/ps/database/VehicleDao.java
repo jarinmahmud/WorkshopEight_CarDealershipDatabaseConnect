@@ -1,4 +1,5 @@
-package com.ps;
+package com.ps.database;
+import com.ps.models.Vehicle;
 import java.util.List;
 
 public interface VehicleDao {
@@ -9,5 +10,7 @@ public interface VehicleDao {
     List<Vehicle> findByMileageRange(int minMileage, int maxMileage);
     List<Vehicle> findByType(String type);
     void addVehicle(Vehicle vehicle);
-    void removeVehicle(int id);
+    void removeVehicle(String vin);
+    Vehicle getVehicle(String vin); // Added method
+    List<Vehicle> getAllVehicles(); // Added method
 }

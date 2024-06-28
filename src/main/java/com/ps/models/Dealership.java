@@ -1,9 +1,9 @@
-package com.ps;
+package com.ps.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Dealership {
+public class Dealership {
     private String name;
     private String address;
     private String phone;

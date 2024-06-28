@@ -1,7 +1,7 @@
-package com.ps;
+package com.ps.models;
 
-class Vehicle {
-    private int vin;
+public class Vehicle {
+    private String vin;
     private int year;
     private String make;
     private String model;
@@ -10,23 +10,20 @@ class Vehicle {
     private int odometer;
     private double price;
 
-    //Constructor
-    public Vehicle(int vin, String year, String make, int model, String vehicleType, int color, String odometer, double price) {
+    // Constructor with all fields
+    public Vehicle(String vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
         this.vin = vin;
-        this.year = Integer.parseInt(year);
+        this.year = year;
         this.make = make;
-        this.model = String.valueOf(model);
+        this.model = model;
         this.vehicleType = vehicleType;
-        this.color = String.valueOf(color);
-        this.odometer = Integer.parseInt(odometer);
+        this.color = color;
+        this.odometer = odometer;
         this.price = price;
     }
 
-    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
-    }
-
-    //Getters
-    public int getVin() {
+    // Getters
+    public String getVin() {
         return vin;
     }
 
@@ -38,7 +35,6 @@ class Vehicle {
         return make;
     }
 
-
     public String getModel() {
         return model;
     }
@@ -47,27 +43,15 @@ class Vehicle {
         return vehicleType;
     }
 
-
     public String getColor() {
         return color;
     }
-
 
     public int getOdometer() {
         return odometer;
     }
 
-
     public double getPrice() {
         return price;
-    }
-
-
-    public int getMileage() {
-        return 0;
-    }
-
-    public String getType() {
-        return "";
     }
 }
